@@ -21,6 +21,13 @@
  * limitations under the License.
  */
 
+if(process.env.NODETIME_ACCOUNT_KEY) {
+  require('nodetime').profile({
+    accountKey: process.env.NODETIME_ACCOUNT_KEY,
+    appName: 'Bibliocratie-etherpad' // optional
+  });
+}
+
 var log4js = require('log4js')
   , async = require('async')
   , stats = require('./stats')
