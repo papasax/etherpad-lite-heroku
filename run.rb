@@ -6,6 +6,7 @@ require 'uri'
 
 # Create settings hash add merge in the user-provided JSON.
 redis_uri = URI.parse(ENV['DATABASE_URL'])
+#    database: redis_uri.path.sub(%r{^/}, '')
 
 settings = {
   dbType: 'redis',
@@ -14,7 +15,7 @@ settings = {
     host: redis_uri.host,
     password: redis_uri.password,
     port: redis_uri.port,
-    database: redis_uri.path.sub(%r{^/}, '')
+    database: 0
   },
   defaultPadText: '',
   editOnly: true,
