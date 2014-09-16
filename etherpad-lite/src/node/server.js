@@ -49,12 +49,6 @@ async.waterfall([
   
   // load everything
   function(callback) {
-    if(process.env.NODETIME_ACCOUNT_KEY) {
-      require('nodetime').profile({
-        accountKey: process.env.NODETIME_ACCOUNT_KEY,
-        appName: 'Bibliocratie-etherpad' // optional
-      });
-    }
     settings = require('./utils/Settings');
     db = require('./db/DB');
     plugins = require("ep_etherpad-lite/static/js/pluginfw/plugins");
