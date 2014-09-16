@@ -15,7 +15,7 @@ settings = {
     host: redis_uri.host,
     password: redis_uri.password,
     port: redis_uri.port,
-    database: 0
+    database: '0'
   },
   defaultPadText: '',
   editOnly: true,
@@ -71,4 +71,4 @@ if ENV.key?('ETHERPAD_INDEX_CONTENT')
 end
 
 # Run the server.
-exec('node node_modules/ep_etherpad-lite/node/server.js')
+exec('node debug node_modules/ep_etherpad-lite/node/server.js')
